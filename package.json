@@ -1,12 +1,12 @@
 {
-  "name": "react-navigation-collapsible",
+  "name": "@5stones/react-navigation-collapsible",
   "version": "6.3.0",
   "description": "An extension of react-navigation for the collapsible header",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/5-stones/react-navigation-collapsible.git"
   },
-  "author": "5 Stoens <it@weare5stones.com>",
+  "author": "5 Stones <it@weare5stones.com>",
   "license": "MIT",
   "keywords": [
     "react-native",
