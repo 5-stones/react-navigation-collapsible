@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Animated, View } from 'react-native';
-import { getElevationStyle } from './utils';
+import { getElevationStyle } from '../utils';
 
-export type Params = {
+export type CreateHeaderBackgroundProps = {
   translateY: Animated.AnimatedInterpolation;
   opacity: Animated.AnimatedInterpolation;
   backgroundColor: string | null;
@@ -11,14 +11,14 @@ export type Params = {
   headerBackground?: React.ReactNode;
 };
 
-const createHeaderBackground = ({
+export const createHeaderBackground = ({
   translateY,
   opacity,
   backgroundColor,
   collapsedColor,
   elevation,
   headerBackground,
-}: Params) => () => (
+}: CreateHeaderBackgroundProps) => () => (
   <Animated.View style={{ flex: 1, transform: [{ translateY }] }}>
     <View
       style={[
@@ -42,5 +42,3 @@ const createHeaderBackground = ({
     </Animated.View>
   </Animated.View>
 );
-
-export { createHeaderBackground };

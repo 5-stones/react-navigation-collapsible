@@ -1,12 +1,11 @@
 import React from 'react';
 import { Animated, LayoutChangeEvent } from 'react-native';
-import { StackHeaderProps } from '@react-navigation/stack';
 
-type CustomHeader = (props: StackHeaderProps) => React.ReactNode;
+import { CustomHeader } from '../types';
 
 export const createCollapsibleCustomHeaderAnimator = (
   customHeader: CustomHeader
-) => (headerProps: StackHeaderProps) => (
+) => (headerProps: any) => (
   <Animated.View
     style={headerProps?.options?.headerStyle}
     onLayout={(e: LayoutChangeEvent) => {

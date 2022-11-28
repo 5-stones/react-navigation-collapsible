@@ -1,26 +1,21 @@
 import * as React from 'react';
 import { Animated } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 
 const CollapsibleSubHeaderAnimator = ({
   children,
   translateY,
+  onHandleLayout,
 }: {
   children: React.ReactNode;
   translateY: Animated.AnimatedInterpolation;
+  onHandleLayout?: (height: number) => void;
 }) => {
-  const navigation = useNavigation();
-
   const handleLayout = ({
     nativeEvent: {
       layout: { height = 0 },
     },
-  }) => {
-    navigation.setParams({
-      // @ts-ignore
-      collapsibleSubHeaderHeight: height,
-    });
-  };
+  }) => onHandleLayout && onHandleLayout(height);
+
 
   return (
     <Animated.View
